@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body>
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="legion" src="images/legion.jpg" alt="legion Wallpaper"></li>
+
+            <li><img width="200px" id="butterfly_legion" src="images/butterfly_legion.png" alt="butterfly_legion"></li>
+
+            <li><img width="200px" id="lion_tattoo" src="images/lion_tattoo.jpg" alt="lion tattoo"></li>
+
+            <li><img width="200px" id="sandboxAcc" src="images/sandbox_acc3.png" alt="Sandbox Account"></li>
+
+            <li><a style="color: rgb(29, 137, 231);" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // Event objects to learn
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkeym shiftkey, keyCode
+    /* const legion = document.querySelector('#legion'); */
+    /* legion.addEventListener('click', function(e){
+        console.log(e);
+    }, false // event propogation); */
+    /* 
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log("Clicked inside the ul");
+    })
+
+    const butterflylegion = document.querySelector('#butterfly_legion');
+    butterflylegion.addEventListener('click', function(){
+        console.log("clicked on butterfly legion image");
+        e.stopPropogation(); // stops the propogation to image, do not allow bubbling 
+    });
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation(); // stops bubbling 
+        console.log("google clicked");
+        
+    })
+ */
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+        // removeIt.parentNode.removeChild(removeIt);
+    })
+
+    
+</script>
+</html>
